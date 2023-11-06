@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createQuestion should match snapshots when called with empty object 1`] = `
+Object {
+  "entry": Object {
+    "assignment": Object {
+      "status": "RESUMED",
+    },
+    "type": "xstate.assign",
+  },
+  "states": Object {},
+}
+`;
+
+exports[`createQuestion should match snapshots when called with state 1`] = `
+Object {
+  "entry": Object {
+    "assignment": Object {
+      "status": "RESUMED",
+    },
+    "type": "xstate.assign",
+  },
+  "initial": "show_new_product",
+  "states": Object {
+    "addition": Object {
+      "initial": "question",
+      "on": Object {
+        "RESUME": Object {
+          "actions": Object {
+            "assignment": Object {
+              "status": "RESUMED",
+            },
+            "type": "xstate.assign",
+          },
+          "target": ".question",
+        },
+      },
+      "states": Object {
+        "question": Object {
+          "meta": Object {
+            "message": [Function],
+          },
+        },
+      },
+    },
+    "show_new_product": Object {
+      "initial": "question",
+      "on": Object {
+        "ANSWER": Array [
+          Object {
+            "actions": Array [
+              Object {
+                "assignment": [Function],
+                "type": "xstate.assign",
+              },
+              Object {
+                "event": "SKIP",
+                "type": "xstate.raise",
+              },
+            ],
+            "cond": [Function],
+          },
+          Object {
+            "actions": Array [
+              Object {
+                "event": "NEXT",
+                "type": "xstate.raise",
+              },
+            ],
+            "cond": [Function],
+          },
+        ],
+        "NEXT": Object {
+          "target": "suggest_product",
+        },
+        "RESUME": Object {
+          "actions": Object {
+            "assignment": Object {
+              "status": "RESUMED",
+            },
+            "type": "xstate.assign",
+          },
+          "target": ".question",
+        },
+        "SKIP": Object {
+          "target": "addition",
+        },
+      },
+      "states": Object {
+        "invalid": Object {
+          "meta": Object {
+            "message": [Function],
+          },
+        },
+        "question": Object {
+          "meta": Object {
+            "dependencies": [MockFunction],
+            "field": "data.buy_new_product",
+            "message": [MockFunction],
+          },
+        },
+      },
+    },
+    "suggest_product": Object {
+      "initial": "question",
+      "on": Object {
+        "RESUME": Object {
+          "actions": Object {
+            "assignment": Object {
+              "status": "RESUMED",
+            },
+            "type": "xstate.assign",
+          },
+          "target": ".question",
+        },
+      },
+      "states": Object {
+        "question": Object {
+          "meta": Object {
+            "message": [Function],
+          },
+        },
+      },
+    },
+  },
+}
+`;

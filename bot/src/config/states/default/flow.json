@@ -1,0 +1,137 @@
+{
+  "nodes": [
+    {
+      "id": "start",
+      "type": "idle",
+      "data": {
+        "type": "start"
+      }
+    },
+    {
+      "id": "idle-0",
+      "type": "idle",
+      "data": {}
+    },
+    {
+      "id": "send-0",
+      "type": "sendMessage",
+      "data": {
+        "value": "Cats or dogs?"
+      }
+    },
+    {
+      "id": "check-1",
+      "type": "checkMessage",
+      "data": {
+        "value": "Cats"
+      }
+    },
+    {
+      "id": "check-2",
+      "type": "checkMessage",
+      "data": {
+        "value": "Dogs"
+      }
+    },
+    {
+      "id": "send-1",
+      "type": "sendMessage",
+      "data": {
+        "value": "I love cats, too!"
+      }
+    },
+    {
+      "id": "send-2",
+      "type": "sendMessage",
+      "data": {
+        "value": "I love dogs, too!"
+      }
+    },
+    {
+      "id": "send-3",
+      "type": "sendMessage",
+      "data": {
+        "value": "Please answer again."
+      }
+    },
+    {
+      "id": "end",
+      "type": "idle",
+      "data": {
+        "type": "end"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-send-2a-end",
+      "source": "send-2",
+      "sourceHandle": "a",
+      "target": "end",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-send-1a-end",
+      "source": "send-1",
+      "sourceHandle": "a",
+      "target": "end",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-check-1t-send-1",
+      "source": "check-1",
+      "sourceHandle": "t",
+      "target": "send-1",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-check-2t-send-2",
+      "source": "check-2",
+      "sourceHandle": "t",
+      "target": "send-2",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-check-1f-check-2",
+      "source": "check-1",
+      "sourceHandle": "f",
+      "target": "check-2",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-idle-0-check-1",
+      "source": "idle-0",
+      "sourceHandle": null,
+      "target": "check-1",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-send-0a-idle-0",
+      "source": "send-0",
+      "sourceHandle": "a",
+      "target": "idle-0",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-start-send-0",
+      "source": "start",
+      "sourceHandle": null,
+      "target": "send-0",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-check-2f-send-3",
+      "source": "check-2",
+      "sourceHandle": "f",
+      "target": "send-3",
+      "targetHandle": null
+    },
+    {
+      "id": "reactflow__edge-send-3a-idle-0",
+      "source": "send-3",
+      "sourceHandle": "a",
+      "target": "idle-0",
+      "targetHandle": null
+    }
+  ]
+}
